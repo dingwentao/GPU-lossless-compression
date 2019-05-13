@@ -82,7 +82,7 @@ Paper: [IPDPSW’15] Deshpande, A. and Narayanan, P.J., 2015, May. Fast Burrows 
     ./bzip2 -d  /home/dtao/GPU-lossless-compression/testdata/largefile.bz2
     Total compression time 0.190715
 
-    **Compression ratio = 4.4**
+**Compression ratio = 4.4**
 
 Note: The Burrows–Wheeler transform (BWT, also called block-sorting compression) rearranges a character string into runs of similar characters. This is useful for compression, since it tends to be easy to compress a string that has runs of repeated characters by techniques such as move-to-front transform and run-length encoding. More importantly, the transformation is reversible, without needing to store any additional data except the position of the first original character. The BWT is thus a "free" method of improving the efficiency of text compression algorithms, costing only some extra computation. bzip2 is a free and open-source file compression program that uses the Burrows–Wheeler algorithm.
 
