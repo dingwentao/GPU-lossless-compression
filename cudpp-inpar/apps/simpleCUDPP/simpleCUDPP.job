@@ -1,0 +1,10 @@
+#!/bin/bash -l
+
+#SBATCH -q gpuq
+#SBATCH -N 1
+#SBATCH -n 1
+#SBATCH -J simpleCUDPP
+#SBATCH -o simpleCUDPP.%j.out
+#SBATCH -e simpleCUDPP.%j.error
+
+./simpleCUDPP
