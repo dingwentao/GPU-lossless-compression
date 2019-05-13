@@ -23,6 +23,20 @@ Code: https://github.com/IlyaGrebnov/libbsc, http://libbsc.com/
 
 Paper: Burrows, M. and Wheeler, D.J., 1994. A block-sorting lossless data compression algorithm. (https://www.hpl.hp.com/techreports/Compaq-DEC/SRC-RR-124.pdf)
 
+    [compress]
+    ./bsc e /home/dtao/GPU-lossless-compression/testdata/largefile /home/dtao/GPU-lossless-compression/testdata/largefile.bsc -G
+    This is bsc, Block Sorting Compressor. Version 3.1.0. 8 July 2012.
+    Copyright (c) 2009-2012 Ilya Grebnov <Ilya.Grebnov@gmail.com>.
+
+    /home/dtao/GPU-lossless-compression/testdata/largefile compressed 3569598 into 159230 in 0.147 seconds.
+
+    [decompress]
+    ./bsc d /home/dtao/GPU-lossless-compression/testdata/largefile.bsc /home/dtao/GPU-lossless-compression/testdata/largefile.bsc.out -G
+    This is bsc, Block Sorting Compressor. Version 3.1.0. 8 July 2012.
+    Copyright (c) 2009-2012 Ilya Grebnov <Ilya.Grebnov@gmail.com>.
+
+    /home/dtao/GPU-lossless-compression/testdata/largefile. decompressed 159230 into 3569598 in 0.215 seconds.
+
 ### 3. Parallel Variable-Length Encoding on GPGPUs
 
 Abstract: bzip2-cuda is a parallel version of the BZip2 lossless data compression algorithm using NVIDIA's CUDA, with the aim of improving compression/decompression speed, leaving the compression ratio intact. bzip2 compression program is based on Burrows–Wheeler algorithm.
@@ -100,7 +114,9 @@ Slides: http://on-demand.gputechconf.com/gtc/2014/presentations/S4459-parallel-l
     decoding.. 1520µs
     GPU memcpy DtH.. 24461µs
 
-### 7. Unknown CUDA Huffman code: https://github.com/smadhiv/HuffmanCoding_MPI_CUDA 
+### 7. Unknown CUDA Huffman
+
+Code: https://github.com/smadhiv/HuffmanCoding_MPI_CUDA 
 
 ## **LZ Family**
 
