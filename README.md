@@ -11,7 +11,8 @@ Code: http://cudpp.github.io/
 
 Paper: [InPar’12] Patel, R.A., Zhang, Y., Mak, J., Davidson, A. and Owens, J.D., 2012. Parallel lossless data compression on the GPU (pp. 1-9). IEEE.
 Slides: http://on-demand.gputechconf.com/gtc/2012/presentations/S0361-Lossless-Data-Compression-on-GPUs.pdf
-Comment: Cuda 10 is not working, Cuda 9.1 seems working according to https://github.com/cudpp/cudpp/issues/185.
+
+*Cuda 10 is not working, Cuda 9.1 seems working according to https://github.com/cudpp/cudpp/issues/185.*
 
 2. LibBSC - High Performance Block-Sorting Data Compression Library
 
