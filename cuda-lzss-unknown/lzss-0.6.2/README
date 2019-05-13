@@ -1,0 +1,140 @@
+DESCRIPTION
+-----------
+This archive contains a simple and readable ANSI C library implementing LZSS
+encoding and decoding.  This implementation is not intended to be the best,
+fastest, smallest, or any other performance related adjective.
+
+Included in this library is a sample program demonstrating the usage of the
+encode and decoding routines.  The library has been designed so that it may
+be linked with different sliding window search routines which can speed up
+the compression time at the cost of additional memory space.
+
+More information on LZSS encoding may be found at:
+http://michael.dipperstein.com/lzss
+http://www.datacompression.info/LZSS.shtml
+
+FILES
+-----
+COPYING         - Rules for copying and distributing LGPL software
+bitfile.c       - Library to allow bitwise reading and writing of files.
+bitfile.h       - Header for bitfile library.
+brute.c         - File implementing brute force search for strings matching the
+                  strings to be encoded.
+comp.c          - Simple example of a compression only program.
+COPYING         - Rules for copying and distributing GPL software
+COPYING.LESSER  - Rules for copying and distributing LGPL software
+decomp.c        - Simple example of a decompression only program.
+hash.c          - File implementing hash table search for strings matching the
+                  strings to be encoded.
+kmp.c           - File implementing the Knuth-Morris-Pratt string matching
+                  algorithm to search for strings matching the strings to be
+                  encoded.
+list.c          - File implementing linked list indexed search for strings
+                  matching the strings to be encoded.
+lzlocal.h       - Header file defining interface to be used by files
+                  implementing searches for strings matching strings to be
+                  encoded.
+lzdecode.c      - LZSS decoding source
+lzencode.c      - LZSS encoding source
+lzss.h          - LZSS encoding/decoding header files
+lzvars.c        - Variables used by both lzencode and lzdecode
+Makefile        - makefile for this project (assumes gcc compiler and GNU make)
+optlist.c       - Source code for GetOptlist function and supporting functions
+optlist.h       - Header file to be included by code using the optlist library
+README          - this file
+sample.c        - Sample program demonstrating usage of encode and decode
+                  routines.
+tree.c          - File implementing a sorted binary tree to index and search
+                  for strings matching the strings to be encoded.
+
+BUILDING
+--------
+To build these files with GNU make and gcc:
+1. Edit the Makefile variable FMOBJ to choose the string matching technique
+   which will be used.
+2. Windows users should define the environment variable OS to be Windows or
+   Windows_NT.  This is often already done.
+3. Enter the command "make" from the command line.
+
+
+The sample programs comp and decomp are not built by default.  To build these
+programs on Unix/Linux use the commands "make comp" and "make decomp".  Windows
+users should use the commands "make comp.exe" and "make decomp.exe"
+
+USAGE
+-----
+Usage: sample <options>
+
+options:
+  -c : Encode input file to output file.
+  -d : Decode input file to output file.
+  -i <filename> : Name of input file.
+  -o <filename> : Name of output file.
+  -h|?  : Print out command line options.
+
+-c      Performs LZSS style compression on specified input file (see -i)
+        writing the results to the specified output file (see -o).
+
+-d      Decompresses the specified input file (see -i) writing the results to
+        the specified output file (see -o).  Only files compressed by this
+        program may be decompressed.
+
+-i <filename>   The name of the input file.  There is no valid usage of this
+                program without a specified input file.
+
+-o <filename>   The name of the output file.  There is no valid usage of this
+                program without a specified input file.
+
+HISTORY
+-------
+11/24/03  - Initial release
+12/10/03  - Changed handling of sliding window to better match standard
+            algorithm description.
+12/11/03  - Added version with linked lists to speed up encode.
+12/12/03  - Added version with hash table to speed up encode.
+02/21/04  - Major changes:
+            * Separated encode/decode, match finding, and main.
+            * Use bitfiles for reading/writing files
+            * Use traditional LZSS encoding where the coded/uncoded bits
+              precede the symbol they are associated with, rather than
+              aggregating the bits.
+11/08/04  - Major changes:
+            * Split encode and decode routines for to allow for separate
+              linking (see comp.c and decomp.c)
+            * Makefile now builds code as libraries.  This should make LGPL
+              compliance a bit easier.
+            * Upgraded to latest bitfile library.
+            * Add the option to pass compression/decompression routines file
+              pointers instead of file names.
+06/21/05  - Corrected BitFileGetBits/PutBits error that accessed an extra
+            byte when given an integral number of bytes.
+12/27/05  - Major changes:
+            * Use slower but clearer Get/PutBitsInt for reading/writing bits.
+            * Replace mod with conditional Wrap macro.
+            * Allow hash table to change size with dictionary.
+12/25/06  - Corrected bug in allocation of default decode output.
+          - Minor comment corrections
+03/24/07  - Closes output file in EncodeLZSSByName and DecodeLZSSByName
+08/30/07  - Explicitly licensed under LGPL version 3.
+          - Replaces getopt() with optlist library.
+02/11/10  - Added code that uses the Knuth-Morris-Pratt string matching
+            algorithm to search for string matches during the encoding process.
+08/16/10  - Added code that uses a binary tree to sort strings as they are
+            added to the sliding window and to search for string matches during
+            the encoding process.
+
+TODO
+----
+- Experiment with string matching techniques and data structures
+  - suffix trees
+  - suffix arrays
+  - multi-byte hash keys
+  - Boyer-Moore
+  - hash/binary tree combo, using one tree for each hash key
+- Use a lazy encoding process.
+  - Defer writing a code word until it is determined that a longer match
+    isn't formed by adding the next symbols from the unecoded stream.
+
+AUTHOR
+------
+Michael Dipperstein (mdipper@alumni.engr.ucsb.edu)

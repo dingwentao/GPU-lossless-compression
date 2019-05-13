@@ -1,0 +1,23 @@
+This file contains the TODO list that are not explicitly mentioned as "TODO: "
+in our source code files.
+
+1. Fixing our kernel to write length of compressed data process by each CUDA thread.
+   I think we have to know exact size in bits because the compressed data won't be
+   in multiple of bytes. I do not fully understand how LZSS figures out when to stop
+   decoding, but I'm assuming sequential version stops compressing when it reaches EOF.
+   In this case, it just knowing size by bytes won't generate any problem, but in our
+   case, since we are appending each thread's compressed data, we have to know exact
+   bits to copy. I tried compressing with our versioi and decompressing with origianl,
+   but ouput was not readable at all. Base on my understanding, if we don't have any
+   other bug, at least very first part (processed by thread 0) of the data should be 
+   identical to original text file.
+
+2. Seems like it segfaults inside the kernel. This bug might existed when we
+   were using sigle thread in CUDA (we never had error checking and syncing after the
+   kenel call before). I suspect that this is related to the bug that misses
+   last character of the file. Abhishek can take a look at this.
+
+
+Tools that might help debugging.
+    dd: can selectively choose portion of binaray file
+    cmp:  
