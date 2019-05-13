@@ -37,7 +37,7 @@ Paper: Burrows, M. and Wheeler, D.J., 1994. A block-sorting lossless data compre
 
     /home/dtao/GPU-lossless-compression/testdata/largefile. decompressed 159230 into 3569598 in 0.215 seconds.
     
-    **Compression Ratio = 22.42**
+**Compression Ratio = 22.42**
 
 ### 3. Parallel Variable-Length Encoding on GPGPUs
 
@@ -145,7 +145,7 @@ Paper: [CLUSTER’11] Ozsoy, A. and Swany, M., 2011, September. CULZSS: LZSS los
     All the time took:  0.802943
     Throughput for  2MB is :    19.926695Mbps
 
-    **Compression Ratio = 1.60**
+**Compression Ratio = 1.60**
 
 ### 9. Unknown CUDA LZSS
 
@@ -158,10 +158,11 @@ Code: https://github.com/abshkbh/cuda-lzss
     Time for CPU to GPU is 0sec and 794usec
     Time for GPU to CPU is 0sec and 2254usec
     Total compressed output : 3092074
-    **Compression Ratio : 1.154435**
     Only Kernel Time is 1sec and 122868usec
     Total Time is 14sec and 875701usec
     After encoding
+
+**Compression Ratio : 1.154435**
 
     [CPU compress]
     ./sample -c -i /home/dtao/GPU-lossless-compression/testdata/largefile -o /home/dtao/GPU-lossless-compression/testdata/largefile.lzss2
@@ -169,6 +170,6 @@ Code: https://github.com/abshkbh/cuda-lzss
     T1 is 1557765394sec and 124395usec
     T2 is 1557765400sec and 706787usec
     
-    **Compression Ratio: 1.925268**
+**Compression Ratio: 1.925268**
      
 
