@@ -59,7 +59,7 @@
 #include "decompression.h"
 
 #define MINSIZE 65536 //335544321 // //1MB size for minimum process
-#define BUFSIZE 65536//65536 //1MB size for buffers
+#define BUFSIZE 1048576//65536 //1MB size for buffers
 
 struct timeval tall_start,tall_end;
 double alltime_signal;

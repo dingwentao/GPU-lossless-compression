@@ -82,7 +82,7 @@ int readFile(char *inputFileName, int *inputSize, char **inputArr ) {
     FILE *fp;
     stat(inputFileName, &st);
     *inputSize = st.st_size;
-    printf("size of the input file, %s: %d\n", inputFileName, inputSize);
+    //printf("size of the input file, %s: %zd\n", inputFileName, inputSize);
     // Open file and handle error
     fp = fopen(inputFileName, "rb");
     if (fp == NULL){
