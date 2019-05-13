@@ -431,7 +431,7 @@ void new_format_output(char *input,int *output_length, int totalThreads,unsigned
 		}
 	}
 
-        ratio = ((float)(original_length - compressed) * 100) / original_length;
+        ratio = (float)(original_length) / compressed;
 	printf("Total compressed output : %llu\n",compressed);
 	printf("Compression Ratio : %f\n",ratio);
       
