@@ -64,7 +64,6 @@ int main(int argc, char **argv) {
 
 
     parseArguement(argc, argv, inputFileName);
-    printf("%s\n", inputFileName);
     readFile(inputFileName, &inputSize, &inputArr);
     output = (char *)malloc(sizeof(char) * (inputSize + 1));
     printf("Before encoding\n");
@@ -83,12 +82,11 @@ int readFile(char *inputFileName, int *inputSize, char **inputArr ) {
     FILE *fp;
     stat(inputFileName, &st);
     *inputSize = st.st_size;
-    //printf("size of the input file, %s: %d\n", inputFileName, inputSize);
+    printf("size of the input file, %s: %d\n", inputFileName, inputSize);
     // Open file and handle error
-    fp = fopen(inputFileName, "r");
+    fp = fopen(inputFileName, "rb");
     if (fp == NULL){
-        //fprintf(stderr, "Cannot open file: %s\n", inputFileName);
-        printf("Cannot open file: %s\n", inputFileName);
+        fprintf(stderr, "Cannot open file: %s\n", inputFileName);
         exit (-1);
     }
     // Allocate appropriate amount of char array and copy from file.
