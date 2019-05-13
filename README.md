@@ -2,6 +2,7 @@ GPU CUDA Lossless Compressors Review
 
 GPU-accelerated Lossless Compression
 1. BZIP/BWT Family
+
 CUDPP - CUDA Data-Parallel Primitives Library
 Abstract: CUDPP release 2.1 is a feature release that adds many new parallel primitives. We have added cudppCompress, a lossless data compression algorithm. This compression utilizes efficient parallel Burrows-Wheeler and Move-to-Front transforms (BTW) which are also exposed through the API. GPU implementation is dominated by BWT performance and is 2.78× slower than bzip2, with BWT and MTF-Huffman respectively 2.89x and 1.34x slower.
 Code: http://cudpp.github.io/
@@ -55,6 +56,7 @@ Total compression time 8.180155
 Note: The Burrows–Wheeler transform (BWT, also called block-sorting compression) rearranges a character string into runs of similar characters. This is useful for compression, since it tends to be easy to compress a string that has runs of repeated characters by techniques such as move-to-front transform and run-length encoding. More importantly, the transformation is reversible, without needing to store any additional data except the position of the first original character. The BWT is thus a "free" method of improving the efficiency of text compression algorithms, costing only some extra computation. bzip2 is a free and open-source file compression program that uses the Burrows–Wheeler algorithm.
 
 2. Huffman Family
+
 E2MC - Entropy Encoding Based Memory Compression for GPUs
 Abstract: We propose an entropy encoding based memory compression (E2MC) technique for GPUs, which is based on the well-known Huffman encoding. We study the feasibility of entropy encoding for GPUs and show that it achieves higher compression ratios than state-of-the-art GPU compression techniques. Furthermore, we address the key challenges of probability estimation, choosing an appropriate symbol length for encoding, and decompression with low latency.
 Code: ???
@@ -69,6 +71,7 @@ Slides: http://on-demand.gputechconf.com/gtc/2014/presentations/S4459-parallel-l
 Unknown CUDA Huffman code: https://github.com/smadhiv/HuffmanCoding_MPI_CUDA 
 
 3. LZ Family
+
 CULZSS: LZSS Lossless Data Compression on CUDA
 Abstract: We present an implementation of Lempel-Ziv-Storer-Szymanski (LZSS) lossless data compression algorithm by using NVIDIA GPUs CUDA Framework. Our system outperforms the serial CPU LZSS implementation by up to 18x, the parallel threaded version up to 3x and the BZIP2 program by up to 6x in terms of compression time.
 Code: https://github.com/adnanozsoy/CUDA_Compression
