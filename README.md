@@ -36,6 +36,8 @@ Paper: Burrows, M. and Wheeler, D.J., 1994. A block-sorting lossless data compre
     Copyright (c) 2009-2012 Ilya Grebnov <Ilya.Grebnov@gmail.com>.
 
     /home/dtao/GPU-lossless-compression/testdata/largefile. decompressed 159230 into 3569598 in 0.215 seconds.
+    
+    **Compression Ratio = 22.42**
 
 ### 3. Parallel Variable-Length Encoding on GPGPUs
 
@@ -80,7 +82,7 @@ Paper: [IPDPSW’15] Deshpande, A. and Narayanan, P.J., 2015, May. Fast Burrows 
     ./bzip2 -d  /home/dtao/GPU-lossless-compression/testdata/largefile.bz2
     Total compression time 0.190715
 
-    Compression ratio = 4.4
+    **Compression ratio = 4.4**
 
 Note: The Burrows–Wheeler transform (BWT, also called block-sorting compression) rearranges a character string into runs of similar characters. This is useful for compression, since it tends to be easy to compress a string that has runs of repeated characters by techniques such as move-to-front transform and run-length encoding. More importantly, the transformation is reversible, without needing to store any additional data except the position of the first original character. The BWT is thus a "free" method of improving the efficiency of text compression algorithms, costing only some extra computation. bzip2 is a free and open-source file compression program that uses the Burrows–Wheeler algorithm.
 
@@ -143,7 +145,7 @@ Paper: [CLUSTER’11] Ozsoy, A. and Swany, M., 2011, September. CULZSS: LZSS los
     All the time took:  0.802943
     Throughput for  2MB is :    19.926695Mbps
 
-    Compression Ratio = 1.60
+    **Compression Ratio = 1.60**
 
 ### 9. Unknown CUDA LZSS
 
@@ -156,7 +158,7 @@ Code: https://github.com/abshkbh/cuda-lzss
     Time for CPU to GPU is 0sec and 794usec
     Time for GPU to CPU is 0sec and 2254usec
     Total compressed output : 3092074
-    Compression Ratio : 1.154435
+    **Compression Ratio : 1.154435**
     Only Kernel Time is 1sec and 122868usec
     Total Time is 14sec and 875701usec
     After encoding
@@ -166,6 +168,7 @@ Code: https://github.com/abshkbh/cuda-lzss
     Before encoding
     T1 is 1557765394sec and 124395usec
     T2 is 1557765400sec and 706787usec
-    Compression Ratio: 1.925268
+    
+    **Compression Ratio: 1.925268**
      
 
