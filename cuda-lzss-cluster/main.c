@@ -71,7 +71,7 @@ int maxiters=0;
 int padding=0;
 int numbls=0;
 int blsize=0;
-int totalsize=0;
+long int totalsize=0;
 unsigned int * bookkeeping;
 int decomp=0;
 int buffersize =0;
@@ -222,7 +222,7 @@ int main (int argc, char* argv[])
 	}
 	
 
-	printf("file size:%d",totalsize);
+	printf("file size:%ld",totalsize);
 	//decide buf sizes
 	
 	if(totalsize < BUFSIZE)
