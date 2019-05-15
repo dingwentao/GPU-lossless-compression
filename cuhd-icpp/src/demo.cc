@@ -34,12 +34,18 @@ int main(int argc, char** argv) {
     // name of the binary file
     const char* bin = argv[0];
     
+    if(argc < 4) {
+        std::cout << "USAGE: " << bin << " <compute device index> "
+        << "<input file> " << "<output file>" << std::endl;
+        return 1;
+    }
+    
     // compute device to use
     const std::int64_t compute_device_id = atoi(argv[1]);
      
-    if(compute_device_id < 0 || argc < 4) {
+    if(compute_device_id < 0) {
         std::cout << "USAGE: " << bin << " <compute device index> "
-        << "<input file> " << " <output file>" << std::endl;
+        << "<input file> " << "<output file>" << std::endl;
         return 1;
     }
 
