@@ -102,8 +102,7 @@ Abstract: A Huffman decoder for processing raw (i.e. unpartitioned) Huffman enco
 
 Code: https://github.com/weissenberger/gpuhd
 
-Paper: [ICPP’16] Sitaridi, E., Mueller, R., Kaldewey, T., Lohman, G. and Ross, K.A., 2016, August. Massively-parallel lossless data decompression. In 2016 45th International Conference on Parallel Processing (ICPP) (pp. 242-247). IEEE.
-Slides: http://on-demand.gputechconf.com/gtc/2014/presentations/S4459-parallel-lossless-compression-using-gpus.pdf
+Paper: [ICPP’18] Weißenberger, André, and Bertil Schmidt. "Massively parallel Huffman decoding on GPUs." In Proceedings of the 47th International Conference on Parallel Processing, pp. 1-10. 2018.
 
     [compress/decompress]
     ./demo 0 100
