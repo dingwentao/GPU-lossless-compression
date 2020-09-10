@@ -1,4 +1,4 @@
-# GPU-accelerated Lossless Compression Survey
+# GPU-Accelerated Lossless Compression Survey
 
 This repository suveys state-of-the-art GPU-accelerated lossless compressors. The evaluation is conductd using an NVIDIA V100 GPU (16 GB memory). Besides lossless compression survey, another purpose for this survey is to identify suitable GPU-accelerated lossless compressor for our developed CUDA-based lossy compressor (called cuSZ), which can be accessed at https://github.com/szcompressor/cuSZ. Please feel free to contact me (dingwen.tao@wsu.edu) if you find any issue or any lossless compressor that has not been covered in this survey. 
 
